@@ -1,0 +1,24 @@
+{
+    "name": "waughj/wp-media-sizes",
+    "description": "Class that simplifies setting WordPress media sizes.",
+    "keywords": [ "wordpress", "media", "sizes" ],
+    "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Jaimeson Waugh",
+            "email": "waughjai@gmail.com"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=7.2"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "WaughJ\\WPMediaSizes\\": "src/"
+        }
+    }
+}
