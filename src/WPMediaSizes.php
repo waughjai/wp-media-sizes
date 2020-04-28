@@ -51,6 +51,11 @@ class WPMediaSizes
 		{
 			remove_image_size( $size );
 		}
+	}
+
+	public static function reset() : void
+	{
+		self::removeAll();
 		self::add( self::DEFAULT_SIZES );
 	}
 

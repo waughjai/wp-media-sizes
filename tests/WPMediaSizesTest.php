@@ -110,46 +110,4 @@ class WPMediaSizesTest extends TestCase
 		$this->assertTrue( !array_key_exists( 'huge', $_wp_additional_image_sizes ) );
 		$this->assertEquals( 1, $_wp_additional_image_sizes[ 'tiny' ][ 'height' ] );
 	}
-
-	public function testClearMediaSizes() : void
-	{
-		WPMediaSizes::set
-		(
-			[
-				[
-					'name' => 'small',
-					'width' => 800,
-					'height' => 1000
-				],
-				[
-					'name' => 'huge',
-					'width' => 2000,
-					'height' => 1000
-				]
-			]
-		);
-		WPMediaSizes::set
-		(
-			[
-				[
-					'name' => 'tiny',
-					'width' => 1,
-					'height' => 1
-				],
-				[
-					'name' => 'gigantic',
-					'width' => 5000,
-					'height' => 2000
-				],
-				[
-					'name' => 'medium',
-					'width' => 948321
-				]
-			]
-		);
-		$this->assertEquals( 948321, intval( get_option( "medium_size_w" ) ) );
-		WPMediaSizes::clear();
-		$this->assertEquals( [ "thumbnail", "medium", "medium_large", "large" ], get_intermediate_image_sizes() );
-		$this->assertEquals( 300, intval( get_option( "medium_size_w" ) ) );
-	}
 }

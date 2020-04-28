@@ -143,3 +143,8 @@ function update_option( $option, $value ) {
     global $default_options;
     $default_options[ $option ] = $value;
 }
+
+function remove_option( $option ) {
+    global $default_options;
+    unset( $default_options[ $option ] );
+}
